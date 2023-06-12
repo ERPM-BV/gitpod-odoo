@@ -10,7 +10,7 @@ USER root
 # More information: https://www.gitpod.io/docs/config-docker/
 
 
-# Other requirements and recommendations
+# Other requirements and recommendationsdd
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
 RUN apt-get -qq update \
     && apt-get install -yqq \
