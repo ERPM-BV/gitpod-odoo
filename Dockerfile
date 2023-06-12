@@ -27,12 +27,25 @@ RUN apt-get install -yqq \
         npm \
         openssh-client \
         telnet \
-        vim
+        vim \
+        build-essential \
+        slapd \
+        ldap-utils \
+        tox \
+        python3-cffi \
+        wget \ 
+        python3-venv \ 
+        python3-wheel \
+        libzip-dev \
+        node-less \
+        libpng-dev \
+        gdebi
 RUN apt-get update 
-
+RUN npm install -g rtlcss
 # Install Odoo hard & soft dependencies, and Doodba utilities
 RUN build_deps=" \
         build-essential \
+        python3-dev \
         libfreetype6-dev \
         libfribidi-dev \
         libghc-zlib-dev \
@@ -70,6 +83,12 @@ RUN pip install \
         plumbum \
         pudb \
         pyOpenSSL \
-        python-magic
-
+        python-magic \
+        num2words \
+        ofxparse \
+        dbfread \
+        firebase_admin \
+        psycopg2-binary
+RUN npm install -g less \
+    npm install -g less-plugin-clean-css
 USER gitpod
