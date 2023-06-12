@@ -29,7 +29,6 @@ RUN apt-get install -yqq \
         telnet \
         vim \
         build-essential \
-        slapd \
         ldap-utils \
         tox \
         python3-cffi \
