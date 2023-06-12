@@ -10,13 +10,13 @@ USER root
 # More information: https://www.gitpod.io/docs/config-docker/
 
 
-# Other requirements and recommendationsdd
+# Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
 RUN apt-get -qq update \
     && apt-get install -yqq \
-        curl \
-    && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.6/wkhtmltox_0.12.5-1.buster_amd64.deb \
-    && apt-get install -yqq \
+        curl
+RUN curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+RUN apt-get install -yqq \
         ./wkhtmltox.deb \
         chromium \
         ffmpeg \
@@ -29,8 +29,8 @@ RUN apt-get -qq update \
         npm \
         openssh-client \
         telnet \
-        vim \
-    && apt-get update 
+        vim
+RUN apt-get update 
 
 # Install Odoo hard & soft dependencies, and Doodba utilities
 RUN build_deps=" \
@@ -53,9 +53,9 @@ RUN build_deps=" \
         tk-dev \
         zlib1g-dev \
     " \
-    && apt-get update \
-    && apt-get install -yqq $build_deps \
-    && pip install \
+    && apt-get update
+RUN apt-get install -yqq $build_deps
+RUN pip install \
         -r https://raw.githubusercontent.com/odoo/odoo/16.0/requirements.txt \
         'websocket-client~=0.56' \
         astor \
