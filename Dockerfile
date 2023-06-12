@@ -19,13 +19,10 @@ RUN curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/do
 RUN apt-get install -yqq \
         ./wkhtmltox.deb
 RUN apt-get install -yqq \
-        chromium \
-        ffmpeg \
         fonts-liberation2 \
         gettext \
         git \
         gnupg2 \
-        locales-all \
         nano \
         npm \
         openssh-client \
