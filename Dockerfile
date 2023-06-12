@@ -37,7 +37,7 @@ RUN apt-get install -yqq \
         libpng-dev \
         gdebi \
         build-essential \
-        python-dev \
+        python3-dev \
         libssl-dev \
         libfreetype6-dev \
         libfribidi-dev \
@@ -58,6 +58,7 @@ RUN apt-get install -yqq \
         zlib1g-dev
 RUN apt-get update 
 RUN npm install -g rtlcss
+RUN pip install setuptools
 # Install Odoo hard & soft dependencies, and Doodba utilities
 RUN pip install \
         -r https://raw.githubusercontent.com/odoo/odoo/16.0/requirements.txt \
