@@ -31,20 +31,14 @@ RUN apt-get install -yqq \
         build-essential \
         ldap-utils \
         tox \
-        python3-cffi \
         wget \ 
-        python3-venv \ 
-        python3-wheel \
         libzip-dev \
         node-less \
         libpng-dev \
-        gdebi
-RUN apt-get update 
-RUN npm install -g rtlcss
-# Install Odoo hard & soft dependencies, and Doodba utilities
-RUN build_deps=" \
+        gdebi \
         build-essential \
-        python3-dev \
+        python-dev \
+        libssl-dev \
         libfreetype6-dev \
         libfribidi-dev \
         libghc-zlib-dev \
@@ -61,20 +55,17 @@ RUN build_deps=" \
         libxslt-dev \
         tcl-dev \
         tk-dev \
-        zlib1g-dev \
-    " \
-    && apt-get update
-RUN apt-get install -yqq $build_deps
+        zlib1g-dev
+RUN apt-get update 
+RUN npm install -g rtlcss
+# Install Odoo hard & soft dependencies, and Doodba utilities
 RUN pip install \
         -r https://raw.githubusercontent.com/odoo/odoo/16.0/requirements.txt \
         'websocket-client~=0.56' \
         astor \
-        click-odoo-contrib \
         debugpy \
         pydevd-odoo \
-        flanker[validator] \
         geoip2 \
-        "git-aggregator<3.0.0" \
         inotify \
         pdfminer.six \
         pg_activity \
