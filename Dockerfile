@@ -17,7 +17,8 @@ RUN apt-get -qq update \
         curl
 RUN curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 RUN apt-get install -yqq \
-        ./wkhtmltox.deb \
+        ./wkhtmltox.deb
+RUN apt-get install -yqq \
         chromium \
         ffmpeg \
         fonts-liberation2 \
