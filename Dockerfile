@@ -2,7 +2,7 @@ FROM gitpod/workspace-postgres
                     
 USER root
 
-# Odoo 16.0 gitpod stuff
+# Odoo 14.0 gitpod stuff
 
 # Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
@@ -55,7 +55,7 @@ RUN npm install -g rtlcss
 RUN pip install setuptools
 # Install Odoo hard & soft dependencies, and Doodba utilities
 RUN pip install \
-        -r https://raw.githubusercontent.com/odoo/odoo/16.0/requirements.txt \
+        -r https://raw.githubusercontent.com/odoo/odoo/14.0/requirements.txt \
         'websocket-client~=0.56' \
         astor \
         debugpy \
