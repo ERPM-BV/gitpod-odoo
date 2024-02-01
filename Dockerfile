@@ -80,10 +80,9 @@ RUN pip install \
         dbfread \
         firebase_admin \
         psycopg2-binary \
-        click \
         coverage \
         pre-commit \
-        click-odoo-contrib
+        odoorpc
 RUN npm install -g less \
     npm install -g less-plugin-clean-css
 USER gitpod
