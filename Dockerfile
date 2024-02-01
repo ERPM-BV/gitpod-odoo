@@ -53,7 +53,7 @@ RUN npm install -g rtlcss
 RUN pip3 install setuptools
 RUN pip3 install setuptools --upgrade
 # Install Odoo hard & soft dependencies, and Doodba utilities
-RUN pip3 install 
+RUN pip3 install \
         astor \
         debugpy \
         pydevd-odoo \
