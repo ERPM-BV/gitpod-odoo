@@ -1,24 +1,13 @@
 FROM gitpod/workspace-postgres
-                    
-USER root
-
-# Install custom tools, runtime, etc. using apt-get
-# For example, the command below would install "bastet" - a command line tetris clone:
-#
-# RUN sudo apt-get -q update && #     sudo apt-get install -yq bastet && #     sudo rm -rf /var/lib/apt/lists/*
-#
-# More information: https://www.gitpod.io/docs/config-docker/
-
-
-# Other requirements and recommendations
-# See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
-RUN apt-get -qq update \
-    && apt-get install -yqq \
+RUN pyenv install 3.11 \
+    && pyenv global 3.11                  
+RUN sudo apt-get -qq update \
+    && sudo apt-get install -yqq \
         curl
 RUN curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-RUN apt-get install -yqq \
+RUN sudo apt-get install -yqq \
         ./wkhtmltox.deb
-RUN apt-get install -yqq \
+RUN sudo apt-get install -yqq \
         fonts-liberation2 \
         gettext \
         git \
@@ -56,8 +45,8 @@ RUN apt-get install -yqq \
         tcl-dev \
         tk-dev \
         zlib1g-dev
-RUN apt-get update 
-RUN apt-get install -yqq \
+RUN sudo apt-get update 
+RUN sudo apt-get install -yqq \
         nodejs \
         npm
 RUN npm install -g rtlcss
