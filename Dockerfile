@@ -61,7 +61,7 @@ RUN npm install -g rtlcss
 RUN pip install setuptools
 # Install Odoo hard & soft dependencies, and Doodba utilities
 RUN pip install \
-        -r https://raw.githubusercontent.com/odoo/odoo/16.0/requirements.txt \
+        -r https://raw.githubusercontent.com/odoo/odoo/17.0/requirements.txt \
         'websocket-client~=0.56' \
         astor \
         debugpy \
@@ -79,7 +79,11 @@ RUN pip install \
         ofxparse \
         dbfread \
         firebase_admin \
-        psycopg2-binary
+        psycopg2-binary \
+        click \
+        coverage \
+        pre-commit \
+        click-odoo-contrib
 RUN npm install -g less \
     npm install -g less-plugin-clean-css
 USER gitpod
