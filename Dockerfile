@@ -1,6 +1,8 @@
 FROM gitpod/workspace-postgres
-RUN pyenv install 3.11 \
-    && pyenv global 3.11                  
+USER root
+RUN pyenv install -l | grep "3.10."
+RUN pyenv install 3.10.9 \
+    && pyenv global 3.10.9                  
 RUN sudo apt-get -qq update \
     && sudo apt-get install -yqq \
         curl
