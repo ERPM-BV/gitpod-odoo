@@ -1,2 +1,2 @@
 # gitpod-odoo
-Gitpod Odoo
+Gitpod Odoo v17
