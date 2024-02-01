@@ -61,9 +61,9 @@ RUN apt-get install -yqq \
         nodejs \
         npm
 RUN npm install -g rtlcss
-RUN pip install setuptools
+RUN pip3 install setuptools
 # Install Odoo hard & soft dependencies, and Doodba utilities
-RUN pip install \
+RUN pip3 install \
         -r https://raw.githubusercontent.com/odoo/odoo/17.0/requirements.txt \
         'websocket-client~=0.56' \
         astor \
