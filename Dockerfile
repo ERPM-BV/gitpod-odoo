@@ -58,7 +58,7 @@ RUN apt-get install -yqq \
         zlib1g-dev
 RUN apt-get update
 RUN apt-get install -yqq \
-        nodejs
+        nodejs \
         npm
 RUN npm install -g rtlcss
 RUN pip install setuptools
