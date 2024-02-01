@@ -62,10 +62,9 @@ RUN apt-get install -yqq \
         npm
 RUN npm install -g rtlcss
 RUN pip3 install setuptools
+RUN pip3 install setuptools --upgrade
 # Install Odoo hard & soft dependencies, and Doodba utilities
-RUN pip3 install \
-        -r https://raw.githubusercontent.com/odoo/odoo/17.0/requirements.txt \
-        'websocket-client~=0.56' \
+RUN pip3 install 
         astor \
         debugpy \
         pydevd-odoo \
@@ -86,6 +85,9 @@ RUN pip3 install \
         coverage \
         pre-commit \
         odoorpc
+RUN pip3 install \
+        -r https://raw.githubusercontent.com/odoo/odoo/17.0/requirements.txt \
+        'websocket-client~=0.56' 
 RUN npm install -g less \
     npm install -g less-plugin-clean-css
 USER gitpod
