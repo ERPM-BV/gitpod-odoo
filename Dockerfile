@@ -56,7 +56,10 @@ RUN apt-get install -yqq \
         tcl-dev \
         tk-dev \
         zlib1g-dev
-RUN apt-get update 
+RUN apt-get update
+RUN apt-get install -yqq \
+        nodejs
+        npm
 RUN npm install -g rtlcss
 RUN pip install setuptools
 # Install Odoo hard & soft dependencies, and Doodba utilities
